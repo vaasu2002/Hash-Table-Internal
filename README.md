@@ -42,10 +42,11 @@ For this hash-tables rely on two ideas:
      We are doing this then M ∈ O(K) i.e. M should be in order of K. Like it should be just big enough to store K keys,
      not too big and not too small, just big enough to efficiently helps us to put keys we want. Its all about finding to sweet stop.
    - So length of the array(which is called bin) should be function of number of keys we are storing.
-   - 
+   - We don’t initially know how many keys we will need. So the language doesn’t fix the size of the bins upfront. As you keep adding keys, the hash table automatically adjusts the size of its internal array (bins/buckets). If more space is needed, the table is resized — in many implementations, the capacity is doubled (M → 2×M). When this happens, the hash table reallocates a larger array and reindexes all existing keys into the new bins. This can cause a brief pause, but resizing is done infrequently — only when the current capacity is exhausted — so the average insertion time remains near constant.
 
+Because of the first step (hashing the application key), we simplify the problem: any key is converted into an integer, often in the range 0 to 2³². Now the hash table only needs to handle integers and map them into a smaller range efficiently. How it stores these integers, chooses the bucket range, and decides when and how to resize the table directly affects how efficient the hash table is.
 
-
+The first step (hashing the application key) makes the second step type-agnostic. Once the key is converted to an integer (the hash value), the hash table doesn’t need to know or care whether the original key was a string, number, object, etc. The second step just takes that integer and maps it into the current table size range [0, m).
 
 
 
