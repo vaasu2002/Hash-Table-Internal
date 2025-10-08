@@ -1,5 +1,5 @@
 # Hash Tables Internals:
-
+#### Variable lookups, class are also inmplemented using hash-tables.
 Hashtables are used as building blocks of language runtimes.
 For example, when we define a class with members and functions and call something like box.put(), the language runtime needs to figure out:
 - which object box refers to,
