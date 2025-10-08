@@ -15,7 +15,7 @@ So, hashtables are not just used in business applications but also play a crucia
 
 For this hash-tables rely on two ideas:
 
-### 1. **Map an application key to a large integer range [0, N):**
+### 1. **Map an application key to a large integer (also called as HashKeys) range [0, N):**
     The main idea for this is that which ever key user wants to put in hash-table language cannot restruct you.
     Language should be able to store whatever data strcuture user wants to use a key be allowed. So there should
     be an mechanism to map incomming key to a wide range of integer.
